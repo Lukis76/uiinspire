@@ -1,0 +1,46 @@
+{
+  "name": "@uiinspire/badge",
+  "version": "0.0.0",
+  "description": "react componets badge",
+  "keywords": [
+    "badge"
+  ],
+  "author": "lucas manoguerra <kiu.manoguerra@gmail.com>",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lukis76/uiinspire.git",
+    "directory": "packages/components/badge"
+  },
+  "bugs": {
+    "url": "https://github.com/Lukis76/uiinspire/issues"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "pnpm build:fast -- --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "dependencies": {
+    "tailwind-variants": "^0.1.14"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0",
+    "react": "^18.0.0"
+  },
+  "clean-package": "../../../clean-package.config.json"
+}

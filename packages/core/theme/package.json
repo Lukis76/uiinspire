@@ -1,0 +1,48 @@
+{
+  "name": "@uiinspire/theme",
+  "description": "To install dependencies: theme",
+  "version": "0.0.0",
+  "author": "lucas manoguerra <kiu.manoguerra@gmail.com>",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lukis76/uiinspire.git",
+    "directory": "packages/core/theme"
+  },
+  "bugs": {
+    "url": "https://github.com/Lukis76/uiinspire/issues"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "bun build:fast -- --watch",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "keywords": [
+    "theme",
+    "theming",
+    "design",
+    "ui",
+    "components",
+    "classNames",
+    "css"
+  ],
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "tailwind-variants": "^0.1.14",
+    "tailwindcss": "^3"
+  },
+  "clean-package": "../../../clean-package.config.json"
+}

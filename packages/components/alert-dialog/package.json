@@ -1,0 +1,48 @@
+{
+  "name": "@uiinspire/alert-dialog",
+  "version": "0.0.0",
+  "description": "react component alest dialog",
+  "keywords": [
+    "alert-dialog"
+  ],
+  "author": "lucas manoguerra <kiu.manoguerra@gmail.com>",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lukis76/uiinspire.git",
+    "directory": "packages/components/alert-dialog"
+  },
+  "bugs": {
+    "url": "https://github.com/Lukis76/uiinspire/issues"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "pnpm build:fast -- --watch",
+    "clean": "rimraf dist .turbo",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "@radix-ui/react-alert-dialog": "^1.0.5",
+    "@uiinspire/cn": "workspace:*"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0",
+    "react": "^18.2.0"
+  },
+  "clean-package": "../../../clean-package.config.json"
+}

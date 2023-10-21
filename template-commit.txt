@@ -1,0 +1,93 @@
+
+# ----------------------------------------------------------
+#
+# < type > ( < optional scope > ): < description >
+#   empty separator line
+# < optional body >
+#   empry separator line
+# < optional footer >
+#
+# ----------------------------------------------------------
+# < type >
+#
+# feat / feature: se confirma, agrega nueva caracteristica 
+# fix: se confirma, soluciona un error
+# refactor: confirmacion de reescritura de codigo sin cambiar comportamiento del mismo
+# perf:
+# style:
+# test:
+# docs:
+# build:
+# ops:
+# ci:
+# chore:
+#
+# ----------------------------------------------------------
+# ( < optional scope > )
+#
+# proporciona informacion contextual adicional
+#
+# 1. es una parte opcional de formato 
+# 2. los alcances permitidos dependen del proyecto especifico
+# 3. no utilice identificadores de problemas como ambitos
+#
+# ----------------------------------------------------------
+# Indocador de cambios importantes
+#
+# los cambios importantes deben indicarse "!" antes de ":" en la linea de asunto, por ejemplo "feat(api)!: remove status endpoint"
+#
+# es una parte opcional del formato
+#
+# ----------------------------------------------------------
+# Desciption
+#
+# contiene description consisa del cambio
+#
+# 1. es un aparte obligatoria del formato
+# 2_1. utilize el imperativo, tiempo presente: "cambiar" no  "cambiado" ni "cambios"
+#   2_2. piensa en "this commit will..." o "This commit should..."
+# 3. no escribas en mayuscula la primer letra
+# 4. sin punto "." al final
+#
+# ----------------------------------------------------------
+# Cuerpo
+#
+# deve incluir los motivacion para el cambio y contrastarlo con el comportamiento anterior 
+#
+# 1. es un aparte opcional del formato
+# 2. utilize el imperativo, tiempo presente: "cambiar" no  "cambiado" ni "cambios"
+# 3. este es el lugar para mensionar los identificadores de problemas y sus relaciones
+#
+# ----------------------------------------------------------
+# pie de pagina
+#
+# debe contener informacion sober cambios importantes y tambien es el lugar para hacer referencia a los problemas con respecto a este compromiso
+#
+# 1. es una parte opcional del formato
+# 2. opcionalmente, haga referencia a un problema por su identificador
+# 3. los cambios importantes deben commensar con la palabra 
+#    "BREAKING CHANGES:" seguido de un espcio o dos lineas nuevas. el resto del mensaje se utiliza para esto
+#
+# ----------------------------------------------------------
+# Examples
+#
+# 1, "feat: add email notifications on new direct messages"
+# 2. "feat(shopping): add the amazing button"
+# 3. "feat!: remove ticket list endpoint
+#     
+#     refers to JIRA-1337
+#
+#     BRAKING CHANGES: ticket endpoints no longer supports list all entites"
+# 4. "fix(api): handle empty message in request body"
+# 5. "fix(api): fix wrong calculation of request body checksum"
+# 6. "fix: add missing parameter to service call
+#
+#     the error occurred because of <reasons>"
+# 7. "build: update dependencies"
+# 8. "build(release): bump version to 1.0.0"
+# 9. "refactor: implement fibonacci number calculation as recursion"
+# 10. "style: remove empty line"
+#
+#
+#
+# ----------------------------------------------------------

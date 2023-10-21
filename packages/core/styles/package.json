@@ -1,0 +1,44 @@
+{
+  "name": "@uiinspire/styles",
+  "version": "0.0.4",
+  "type": "module",
+  "main": "src/index.css",
+  "license": "MIT",
+  "sideEffects": false,
+  "keywords": [
+    "theme",
+    "design",
+    "styles",
+    "ui",
+    "classNames",
+    "css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./src/index.css"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lukis76/uiinspire.git",
+    "directory": "packages/core/styles"
+  },
+  "description": "To install dependencies:",
+  "bugs": {
+    "url": "https://github.com/Lukis76/uiinspire/issues"
+  },
+  "scripts": {
+    "build": "tsup src",
+    "build:fast": "tsup src",
+    "dev": "pnpm build:fast -- --watch",
+    "clean": "rimraf dist ",
+    "typecheck": "tsc --noEmit",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "author": "lucas manoguerra <kiu.manoguerra@gmail.com>"
+}

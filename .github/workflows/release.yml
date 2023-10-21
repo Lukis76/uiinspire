@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - 'master'
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  publish:
+    name: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v3
+
+      - name: Install
+        uses: './.github/common/first-install'
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Tests
+        run: pnpm run test
+
+      - name: Create Release Pull Request or Publish to NPM
+        id: changeset
+        uses: changesets/action@v1
+        with:
+          publish: pnpm run release
+          title: 'ci(changesets): :package: version packages'
+          commit: 'ci(changesets): version packages'
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      

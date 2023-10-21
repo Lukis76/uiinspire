@@ -1,0 +1,88 @@
+{
+  "name": "@uiinspire",
+  "description": "",
+  "main": "index.js",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "lucas ruben manoguerra",
+    "email": "kiu.manoguerra@gmail.com",
+    "url": "https://github.com/Lukis76/prettyui.org",
+    "linkedIn": "https://www.linkedin.com/in/lucas-r-manoguerra/",
+    "github": "https://github.com/Lukis76",
+    "porfolio": "https://rocketdev.vercel.app/es"
+  },
+  "workspaces": [
+    "packages/**/*",
+    "apps/**/*"
+  ],
+  "scripts": {
+    "preinstall": "git config commit.template ./template-commit.txt",
+    "prepare:husky": "husky install",
+    "plop": "plop",
+    "build": "pnpm --filter !@uiinspire/docs --filter !@uiinspire/storybook build",
+    "sb:dev": "pnpm --filter @uiinspire/storybook dev",
+    "sb:build": "pnpm --filter @uiinspire/storybook build",
+    "test:button": "pnpm --filter @uiinspire/button test",
+    "test:alert-dialog": "pnpm --filter @uiinspire/alert-dialog test",
+    "test:cn": "pnpm --filter @uiinspire/cn test",
+    "test:avatar": "pnpm --filter @uiinspire/avatar test",
+    "test:badge": "pnpm --filter @uiinspire/badge test",
+    "test": "vitest run",
+    "lint": "eslint --fix",
+    "format:check": "prettier . --check",
+    "format:write": "prettier . --write",
+    "clean:node-modules": "rimraf ./apps/**/node_modules && rimraf ./packages/**/**/node_modules && rm -rf ./node_modules",
+    "clean:changelogs": "rimraf ./packages/**/**/CHANGELOG.md",
+    "ci": "pnpm lint && pnpm format:write && pnpm test && pnpm --filter !@uiinspire/storybook --filter !@uiinspire/docs build",
+    "version": "changeset version",
+    "release": "changeset publish"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.2",
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.0.0",
+    "@types/react": "^18.2.31",
+    "@types/react-dom": "^18.2.14",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "clean-package": "2.2.0",
+    "commitlint-plugin-function-rules": "^2.0.2",
+    "eslint": "^8.52.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "happy-dom": "^12.9.1",
+    "plop": "^4.0.0",
+    "prettier": "^3.0.3",
+    "prettier-eslint": "^16.1.1",
+    "prettier-eslint-cli": "^8.0.1",
+    "tsup": "^7.2.0",
+    "vitest": "^0.34.6"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "^18",
+      "react-dom": "^18"
+    }
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "packageManager": "pnpm@8.9.0"
+}

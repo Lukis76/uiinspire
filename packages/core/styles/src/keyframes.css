@@ -1,0 +1,73 @@
+/* ############################################# */
+/* ---------------- Tooltips-------------------- */
+/* ############################################# */
+@keyframes tooltip-top {
+  0% {
+    transform: translate(-50%, -110%) scale(0);
+  }
+  60% {
+    transform: translate(-50%, -110%) scale(1.1);
+  }
+  85% {
+    transform: translate(-50%, -110%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -110%) scale(1);
+    opacity: 1;
+  }
+}
+/* ############################################# */
+@keyframes tooltip-bottom {
+  0% {
+    transform: translate(-50%, 110%) scale(0);
+  }
+  60% {
+    transform: translate(-50%, 110%) scale(1.1);
+  }
+  85% {
+    transform: translate(-50%, 110%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 110%) scale(1);
+    opacity: 1;
+  }
+}
+/* ############################################# */
+@keyframes tooltip-left {
+  0% {
+    transform: translate(-110%, -50%) scale(0);
+  }
+  60% {
+    transform: translate(-110%, -50%) scale(1.1);
+  }
+  85% {
+    transform: translate(-110%, -50%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-110%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+/* ############################################# */
+@keyframes tooltip-right {
+  0% {
+    transform: translate(110%, 50%) scale(0);
+  }
+  60% {
+    transform: translate(110%, 50%) scale(1.1);
+  }
+  85% {
+    transform: translate(110%, 50%) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(110%, 50%) scale(1);
+    opacity: 1;
+  }
+}
+/* ############################################# */
+/* --------------------------------------------- */
+/* ############################################# */
