@@ -18,11 +18,15 @@ jobs:
         with:
           token: ${{ secrets.SERVICE_ACCOUNT_PAT }}
 
+      - name: Install dependencies
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Enable node
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
 
       - name: Version Command
         id: version
