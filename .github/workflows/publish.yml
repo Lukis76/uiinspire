@@ -64,10 +64,10 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH }}
 
-      - name: Install Commad
+      - name: Install dependencies
         id: changeset
         run: |
-          pnpm install -g @changesets/cli
+          pnpm install
 
       - name: Release packages
         uses: changesets/action@v1
