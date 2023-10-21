@@ -50,6 +50,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Install dependencies
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Enable node
         uses: actions/setup-node@v3
         with:
