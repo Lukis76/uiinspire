@@ -1,7 +1,7 @@
 {
   "name": "@uiinspire/theme",
   "description": "To install dependencies: theme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "lucas manoguerra <kiu.manoguerra@gmail.com>",
   "license": "MIT",
   "main": "src/index.ts",
