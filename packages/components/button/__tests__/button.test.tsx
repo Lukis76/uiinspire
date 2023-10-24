@@ -1,8 +1,9 @@
-import { act, cleanup, render } from '@testing-library/react'
 import React from 'react'
 import { afterEach, describe, expect, test, vi } from 'vitest'
-
 import '@testing-library/jest-dom'
+import { act, cleanup, render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+
 import { Button } from '../src/button'
 
 const typeButton = [
@@ -103,5 +104,52 @@ describe('Button', () => {
         ? expect(wrapper.getByRole('button')).toHaveAttribute('type', type)
         : expect(wrapper.getByRole('button')).not.toHaveAttribute('type', type)
     })
+  })
+})
+
+/**
+ *
+ *
+ *
+ *
+ *
+ */
+
+describe('Button component', () => {
+  afterEach(cleanup)
+  test('should render', () => {
+    render(<Button />)
+    const button = screen.getByRole('button')
+
+    expect(button).toBeInTheDocument()
+  })
+
+  test('should call onClick', async () => {
+    const user = userEvent.setup()
+    const onClick = vi.fn()
+
+    render(<Button onClick={onClick} />)
+
+    await user.click(screen.getByRole('button'))
+
+    expect(onClick).toHaveBeenCalled()
+  })
+
+  test('should render children', () => {
+    render(<Button>Hello World</Button>)
+
+    expect(screen.getByText('Hello World')).toBeInTheDocument()
+  })
+
+  test('should render custom class name', () => {
+    render(<Button className="custom-class-name" />)
+
+    expect(screen.getByRole('button')).toHaveClass('custom-class-name')
+  })
+
+  test('should render custom style', () => {
+    render(<Button style={{ backgroundColor: '#15f' }} />)
+
+    expect(screen.getByRole('button')).toHaveStyle({ backgroundColor: '#15f' })
   })
 })
